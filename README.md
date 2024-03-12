@@ -85,4 +85,4 @@ Feel free to use any boilerplate, but consider we'll be using Node 12, `npm i` a
 
 And we don't care about Internet Explorer that much.
 
-Be cool and happy coding!
+Be cool and happy coding!   
