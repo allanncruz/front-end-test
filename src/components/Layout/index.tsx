@@ -2,15 +2,17 @@ import React from "react";
 
 import { Aside } from "../Aside";
 import { Header } from "../Header";
-import { Content } from "../Content";
 import { Grid } from "./style";
+import Content from "../Content";
 
-export const Layout: React.FC = () =>{
+export const Layout = ({ children }: {children: React.ReactNode}) =>{
   return (
       <Grid>
         <Header />
         <Aside />
-        <Content />
+        <Content>
+          {children}
+        </Content>
       </Grid>
   )
 };

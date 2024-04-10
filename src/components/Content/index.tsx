@@ -1,10 +1,11 @@
-import React from "react";
 import { Container } from "./style";
 
-export const Content: React.FC = () =>{
+const Content = ({ children }: {children: React.ReactNode}  ) =>{
   return (
       <Container>
-        Content
+        {children}
       </Container>
   )
 };
+
+export default Content; 
