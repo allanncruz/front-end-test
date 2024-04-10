@@ -1,10 +1,31 @@
 import React from "react";
-import { Container } from "./style";
+import { TbAntennaBars4 } from "react-icons/tb";
+import { IoListSharp } from "react-icons/io5";
+import { RiInformationLine } from "react-icons/ri";
+
+import { 
+  Container, 
+  Brand,
+  MenuContainer, 
+  MenuItemLink } from "./style";
 
 export const Aside: React.FC = () =>{
   return (
       <Container>
-        Aside
+        <Brand>
+          <TbAntennaBars4 size={46} />
+          Telecom Carrier
+        </Brand>
+        <MenuContainer>
+          <MenuItemLink href="/">
+            <IoListSharp />
+            Lista de números
+          </MenuItemLink>
+          <MenuItemLink href="/">
+            <RiInformationLine />
+            Sobre
+          </MenuItemLink>
+        </MenuContainer>
       </Container>
   )
 };

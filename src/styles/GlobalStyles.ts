@@ -21,6 +21,10 @@ export default createGlobalStyle`
     height: 100%;
   }
 
+  a{
+    text-decoration: none;
+  }
+
   body {
     font-family: 'Roboto', sans-serif;
     -webkit-font-smoothing: antialiased;
