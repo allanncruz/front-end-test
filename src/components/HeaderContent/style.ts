@@ -14,13 +14,8 @@ export const Title = styled.h1`
   &::after{
     content: "";
     width: 40px;
-    height: 5px;
+    height: 7px;
     background-color: ${props => props.theme.colors.warning};
     display: block;
   }
 `;
-
-export const InputSearch = styled.input`
-  padding: 7px 10px;
-  border-radius: 4px;
-`

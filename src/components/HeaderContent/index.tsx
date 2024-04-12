@@ -1,15 +1,15 @@
-import React from "react";
-import { Container, InputSearch, Title } from "./style";
+import { Container, Title } from "./style";
 
 interface HeaderContentProps {
-  title: string
+  title: string,
+  children?: React.ReactNode
 }
 
-export const HeaderContent = ({title}: HeaderContentProps) =>{
+export const HeaderContent = ({title, children}: HeaderContentProps) =>{
   return (
       <Container>
         <Title>{title}</Title>
-        <InputSearch type="text" placeholder="Filtrar números" />
+        {children}
       </Container>
   )
 };

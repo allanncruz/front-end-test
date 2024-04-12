@@ -13,7 +13,7 @@ export const Aside: React.FC = () =>{
   return (
       <Container>
         <Brand>
-          <TbAntennaBars4 size={46} />
+          <TbAntennaBars4 size={32} />
           Telecom Carrier
         </Brand>
         <MenuContainer>

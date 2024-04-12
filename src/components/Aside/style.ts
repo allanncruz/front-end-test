@@ -15,8 +15,9 @@ export const Brand = styled.div`
   font-weight: 800;
 
   svg {
-    top: -4px;
-    position: relative;
+    background-color: ${props => props.theme.colors.warning};
+    border-radius: 4px;
+    margin-right: 10px;
   }
 `;
 
@@ -27,7 +28,7 @@ export const MenuContainer = styled.nav`
 `;
 
 export const MenuItemLink = styled.a`
-  color: ${props => props.theme.colors.warning};
+  color: ${props => props.theme.colors.info};
   transition: .3s;
   margin: 7px 0;
   display: flex;

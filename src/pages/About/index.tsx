@@ -1,8 +1,11 @@
+import { HeaderContent } from "../../components/HeaderContent";
+import { Container } from "../List/style";
 
 export default function About(){
   return (
-      <>
-        About
-      </>
+      <Container>
+        <HeaderContent title="Sobre o projeto">
+        </HeaderContent>
+      </Container>
   )
 };
