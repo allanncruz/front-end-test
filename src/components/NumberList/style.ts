@@ -7,15 +7,17 @@ export const Container = styled.div`
 export const ListRows = styled.div`
   padding: 10px;
   margin: 10px 0;
+  border-radius: 5px;
   border: 4px;
   background-color: ${props => props.theme.colors.secondary};
   color: ${props => props.theme.colors.white};
   cursor: pointer;
   display: flex;
   font-size: 12px;
+  transition: all.3s;
 
   &:hover {
-    opacity: .9;
+    opacity: .8;
   }
 `;
 

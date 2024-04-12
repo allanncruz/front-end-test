@@ -1,19 +1,11 @@
-import { ListRows, HeaderList, ListColumns, Container } from "./style";
+import { dataTableProps } from "../../interfaces/types";
+import { 
+  ListRows, 
+  HeaderList, 
+  ListColumns, 
+  Container } from "./style";
 
-interface numbersProps {
-  id: number,
-  value: string,
-  monthyPrice: string,
-  setupPrice: string,
-  currency: string
-}
-
-interface dataProps {
-  data: numbersProps[],
-  dataHeader: Array<any>
-}
-
-export const NumberList = ({data, dataHeader}: dataProps) => (
+export const NumberList = ({data, dataHeader}: dataTableProps) => (
   <Container>
     <HeaderList>
       {dataHeader?.map(item => (
