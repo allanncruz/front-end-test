@@ -5,19 +5,44 @@ export const Container = styled.div`
 `;
 
 export const ListRows = styled.div`
-  padding: 10px;
+  padding: 15px;
   margin: 10px 0;
   border-radius: 5px;
   border: 4px;
   background-color: ${props => props.theme.colors.secondary};
-  color: ${props => props.theme.colors.white};
+  color: ${props => props.theme.colors.white};  
   cursor: pointer;
   display: flex;
+  align-items: center;
   font-size: 12px;
   transition: all.3s;
+  position: relative;
+  overflow: hidden;
+
+  &::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: ${props => props.theme.colors.warning};
+    transition: all.3s;
+  }
 
   &:hover {
     opacity: .8;
+
+    &::before{
+      width: 5px;
+    }
+  }
+  
+
+  > div {
+      &:nth-child(1){
+      font-size: 18px;
+      font-weight: 900;
+    }
   }
 `;
 
