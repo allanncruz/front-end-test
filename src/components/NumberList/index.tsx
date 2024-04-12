@@ -17,12 +17,12 @@ export const NumberList = ({data, dataHeader}: dataProps) => (
   <Container>
     <HeaderList>
       {dataHeader?.map(item => (
-        <ListColumns>{item}</ListColumns>
+        <ListColumns key={item}>{item}</ListColumns>
       ))}
     </HeaderList>
 
     {data?.map(item => (
-      <ListRows>
+      <ListRows key={item.id}>
         <ListColumns>
           {item.value}
         </ListColumns>

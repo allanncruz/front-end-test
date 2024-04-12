@@ -1,8 +1,11 @@
 import { HeaderContent } from "../../components/HeaderContent";
 import { NumberList } from "../../components/NumberList";
 import { Container, InputSearch } from "./style";
+import numberList from '../../services/numberList.json';
 
 export default function List(){
+
+  console.log(numberList)
 
   const dataHeader = [
     "Número",
@@ -10,30 +13,6 @@ export default function List(){
     "Preço de configuração",
     "Moeda"
   ]
-
-  const data = [
-    {
-      "id": 41,
-      "value": "+55 84 91234-4322",
-      "monthyPrice": "0.03",
-      "setupPrice": "3.40",
-      "currency": "U$"
-    },
-    {
-      "id": 42,
-      "value": "+55 84 91234-4323",
-      "monthyPrice": "0.03",
-      "setupPrice": "3.40",
-      "currency": "U$"
-    },
-    {
-      "id": 43,
-      "value": "+55 84 91234-4324",
-      "monthyPrice": "0.03",
-      "setupPrice": "3.40",
-      "currency": "U$"
-    }
-  ];
 
   return (
       <Container>
@@ -43,7 +22,7 @@ export default function List(){
 
         <NumberList 
           dataHeader={dataHeader} 
-          data={data} />
+          data={numberList} />
       </Container>
   )
 };
