@@ -18,14 +18,14 @@
     "value": "+55 84 91234-4324",
     "monthyPrice": "0.03",
     "setupPrice": "3.40",
-    "currency": "U$"
+    "currency": "BRL"
   },
   {
     "id": 44,
     "value": "+55 84 91234-4322",
     "monthyPrice": "0.03",
     "setupPrice": "3.40",
-    "currency": "U$"
+    "currency": "BRL"
   },
   {
     "id": 45,
@@ -39,7 +39,7 @@
     "value": "+55 84 91234-4324",
     "monthyPrice": "0.03",
     "setupPrice": "3.40",
-    "currency": "U$"
+    "currency": "BRL"
   },
   {
     "id": 47,

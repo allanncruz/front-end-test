@@ -5,13 +5,10 @@ import numberList from '../../services/numberList.json';
 
 export default function List(){
 
-  console.log(numberList)
-
   const dataHeader = [
     "Número",
     "Preço mensal",
-    "Preço de configuração",
-    "Moeda"
+    "Preço de configuração"
   ]
 
   return (
