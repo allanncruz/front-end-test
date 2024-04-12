@@ -27,7 +27,7 @@ export const MenuContainer = styled.nav`
 `;
 
 export const MenuItemLink = styled.a`
-  color: #fff;
+  color: #f98b08;
   transition: .3s;
   margin: 7px 0;
   display: flex;
