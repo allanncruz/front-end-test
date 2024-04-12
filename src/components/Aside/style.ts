@@ -2,15 +2,15 @@ import styled from "styled-components";
 
 export const Container = styled.aside`
   grid-area: AS;
-  background-color: #252a48;
-  border-right: solid 1px #4d516f;
+  background-color: ${props => props.theme.colors.secondary};
+  border-right: solid 1px ${props => props.theme.colors.primaryLight};
   padding: 20px;
 `;
 
 export const Brand = styled.div`
   display: flex;
   align-items: center;
-  color: #fff;
+  color: ${props => props.theme.colors.white};
   font-size: 17px;
   font-weight: 800;
 
@@ -27,7 +27,7 @@ export const MenuContainer = styled.nav`
 `;
 
 export const MenuItemLink = styled.a`
-  color: #f98b08;
+  color: ${props => props.theme.colors.warning};
   transition: .3s;
   margin: 7px 0;
   display: flex;

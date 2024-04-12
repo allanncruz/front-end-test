@@ -2,5 +2,6 @@ import styled from "styled-components";
 
 export const Container = styled.header`
     grid-area: MH;
-    background-color: #252a48;
+    border-bottom: solid 1px ${props => props.theme.colors.primaryLight};
+    background-color: ${props => props.theme.colors.secondary};
 `;

@@ -7,7 +7,7 @@ export const Container = styled.section`
 `;
 
 export const Title = styled.h1`
-  color: #fff;
+  color: ${props => props.theme.colors.white};
   font-size: 32px;
   position: relative;
 
@@ -15,7 +15,7 @@ export const Title = styled.h1`
     content: "";
     width: 40px;
     height: 5px;
-    background-color: #f98b08;
+    background-color: ${props => props.theme.colors.warning};
     display: block;
   }
 `;
