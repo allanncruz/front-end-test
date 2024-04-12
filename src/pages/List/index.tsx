@@ -3,6 +3,7 @@ import { NumberList } from "../../components/NumberList";
 import { Container, InputSearch } from "./style";
 import numberList from '../../services/numberList.json';
 import { useState } from "react";
+import Loading from "../../components/Loading";
 
 export default function List(){
   const [filter, setFilter] = useState('');
@@ -32,9 +33,11 @@ export default function List(){
           <InputSearch type="text" placeholder="Filtrar números" value={filter} onChange={handleFiltroChange} />
         </HeaderContent>
 
-        <NumberList 
-          dataHeader={dataHeader} 
-          data={filteredItems} />
+        {!filteredItems ? <Loading /> : (
+          <NumberList 
+            dataHeader={dataHeader} 
+            data={filteredItems} />
+        )}
       </Container>
   )
 };
