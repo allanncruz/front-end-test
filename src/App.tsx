@@ -1,14 +1,18 @@
+import GlobalStyles from "./styles/GlobalStyles";
 import { Layout } from "./components/Layout";
 import { ThemeProvider } from 'styled-components';
-import List from "./pages/List";
-import GlobalStyles from "./styles/GlobalStyles";
-import dark from './styles/themes/dark';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+import List from "./pages/List";
 import About from "./pages/About";
 
+import { useTheme } from './hooks/theme';
+
+
 export default function App(){
+  const {theme} = useTheme();
   return (
-      <ThemeProvider theme={dark}>
+      <ThemeProvider theme={theme}>
         <BrowserRouter>
           <GlobalStyles />
           <Layout>
