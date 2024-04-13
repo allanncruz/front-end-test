@@ -1,11 +1,6 @@
+import { IToggleProps } from "../../interfaces/types";
 import { ToggleLabel, ToggleSelector } from "./style";
 
-interface IToggleProps {
-  labelLeft: string,
-  labelRight: string,
-  checked: boolean;
-  onChange(): void;
-}
 
 export const Toggle = ({
   labelLeft,

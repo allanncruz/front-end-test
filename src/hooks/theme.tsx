@@ -7,13 +7,23 @@ import { ITheme, IThemeContext } from "../interfaces/types";
 const ThemeContext = createContext<IThemeContext>({} as IThemeContext);
 
 const ThemeProvider = ({ children }: {children: React.ReactNode}) => {
-  const [theme, setTheme] = useState<ITheme>(dark);
+  const [theme, setTheme] = useState<ITheme>(() => {
+    const themeSaved = localStorage.getItem('@telecom-carrier:theme');
+    
+    if(themeSaved) {
+      return JSON.parse(themeSaved);
+    }else{
+      return dark;
+    }
+  });
 
   const toggleTheme = () => {
     if(theme.title === 'dark'){
       setTheme(light);
+      localStorage.setItem('@telecom-carrier:theme', JSON.stringify(light));
     }else{
       setTheme(dark);
+      localStorage.setItem('@telecom-carrier:theme', JSON.stringify(dark));
     }
   };
 
