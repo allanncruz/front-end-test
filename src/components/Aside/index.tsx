@@ -17,11 +17,11 @@ export const Aside: React.FC = () =>{
           Telecom Carrier
         </Brand>
         <MenuContainer>
-          <MenuItemLink href="/">
+          <MenuItemLink to="/">
             <IoListSharp />
             Lista de números
           </MenuItemLink>
-          <MenuItemLink href="/sobre">
+          <MenuItemLink to="/sobre">
             <RiInformationLine />
             Sobre
           </MenuItemLink>

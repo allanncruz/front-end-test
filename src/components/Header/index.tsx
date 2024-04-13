@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Container } from "./style";
 import { Toggle } from "../Toggle";
 import { useTheme } from "../../hooks/theme";
-import dark from "../../styles/themes/dark";
 
 export const Header: React.FC = () => {
 
