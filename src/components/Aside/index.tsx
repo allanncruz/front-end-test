@@ -21,7 +21,7 @@ export const Aside: React.FC = () =>{
             <IoListSharp />
             Lista de números
           </MenuItemLink>
-          <MenuItemLink href="/">
+          <MenuItemLink href="/sobre">
             <RiInformationLine />
             Sobre
           </MenuItemLink>
