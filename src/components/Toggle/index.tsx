@@ -1,13 +1,25 @@
 import { ToggleLabel, ToggleSelector } from "./style";
 
-export const Toggle = () => (
+interface IToggleProps {
+  labelLeft: string,
+  labelRight: string,
+  checked: boolean;
+  onChange(): void;
+}
+
+export const Toggle = ({
+  labelLeft,
+  labelRight,
+  checked,
+  onChange
+}: IToggleProps) => (
     <>
-      <ToggleLabel>Light</ToggleLabel>
+      <ToggleLabel>{labelLeft}</ToggleLabel>
       <ToggleSelector 
-        checked 
+        checked={checked}
         uncheckedIcon={false}
         checkedIcon ={false} 
-        onChange={() => console.log('alterar')} />
-      <ToggleLabel>Dark</ToggleLabel>
+        onChange={onChange} />
+      <ToggleLabel>{labelRight}</ToggleLabel>
     </>
 )

@@ -16,10 +16,10 @@ export default function App(){
         <BrowserRouter>
           <GlobalStyles />
           <Layout>
-          <Routes>
-            <Route path="/" element={<List />} />
-            <Route path="/sobre" element={<About />} />
-          </Routes>
+            <Routes>
+              <Route path="/" element={<List />} />
+              <Route path="/sobre" element={<About />} />
+            </Routes>
           </Layout>
         </BrowserRouter>
       </ThemeProvider>
