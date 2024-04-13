@@ -1,4 +1,4 @@
-export interface numbersProps {
+export interface INumbersProps {
   id: number,
   value: string,
   monthyPrice: string,
@@ -6,12 +6,35 @@ export interface numbersProps {
   currency: string
 }
 
-export interface dataTableProps {
-  data: numbersProps[],
+export interface IDataTable {
+  data: INumbersProps[],
   dataHeader: Array<any>
 }
 
-export interface HeaderContentProps {
+export interface IHeaderContent {
   title: string,
   children?: React.ReactNode
+}
+
+export interface IThemeContext {
+  toggleTheme(): void;
+  theme: ITheme;
+}
+
+export interface ITheme {
+  title: string;
+  colors: {
+    primary: string;
+    primaryLight: string;
+    secondary: string;
+    tertiary: string;
+
+    white: string;
+    black: string;
+    gray: string;
+
+    success: string;
+    info: string;
+    warning: string;
+  },
 }

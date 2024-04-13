@@ -1,4 +1,4 @@
-import { dataTableProps } from "../../interfaces/types";
+import { IDataTable } from "../../interfaces/types";
 import { covertePrice } from "../../utils/converterPrice";
 import { 
   ListRows, 
@@ -6,7 +6,7 @@ import {
   ListColumns, 
   Container } from "./style";
 
-export const NumberList = ({data, dataHeader}: dataTableProps) => {
+export const NumberList = ({data, dataHeader}: IDataTable) => {
 
   return(
     <Container>
