@@ -1,14 +1,14 @@
+import { ChangeEvent, useState } from "react";
 import { HeaderContent } from "../../components/HeaderContent";
 import { NumberList } from "../../components/NumberList";
 import { Container, InputSearch } from "./style";
 import numberList from '../../services/numberList.json';
-import { useState } from "react";
 import Loading from "../../components/Loading";
 
 export default function List(){
   const [filter, setFilter] = useState('');
 
-  const handleFiltroChange = (event: any) => {
+  const handleFiltroChange = (event: ChangeEvent<HTMLInputElement>) => {
     setFilter(event.target.value);
   };
 
