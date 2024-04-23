@@ -44,15 +44,31 @@ export const ListRows = styled.div`
       font-weight: 900;
     }
   }
+
+
+  @media(max-width: 720px){
+    > div {
+        &:nth-child(1){
+        font-size: 13px;
+        width: 200%;
+      }
+    }
+  }
 `;
 
 export const HeaderList = styled.div`
-  padding: 10px;
+  padding: 15px 10px;
   display: flex;
+  background-color: ${props => props.theme.colors.secondary};
   color: ${props => props.theme.colors.white};
   border-top: solid 1px ${props => props.theme.colors.primaryLight};
   border-bottom: solid 1px ${props => props.theme.colors.primaryLight};
   font-weight: 900;
+
+
+  @media(max-width: 720px){
+    font-size: 14px;
+  }
 
 `;
 

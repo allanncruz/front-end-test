@@ -6,7 +6,7 @@ import {
   ListColumns, 
   Container } from "./style";
 
-export const NumberList = ({data, dataHeader}: IDataTable) => {
+export const TableList = ({data, dataHeader}: IDataTable) => {
 
   return(
     <Container>

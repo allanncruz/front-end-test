@@ -7,6 +7,9 @@ export const Grid = styled.section`
     grid-template-areas: 
       'AS MH'
       'AS CT';
+    height: 100vh;
 
-      height: 100vh;
+    @media(max-width: 720px){
+      grid-template-columns: 70px auto;
+    }
 `;

@@ -7,14 +7,15 @@ import {
   Container, 
   Brand,
   MenuContainer, 
-  MenuItemLink } from "./style";
+  MenuItemLink, 
+  BrandLabel} from "./style";
 
 export const Aside: React.FC = () =>{
   return (
       <Container>
         <Brand>
           <TbAntennaBars4 size={32} />
-          Telecom Carrier
+          <BrandLabel htmlFor="">Telecom Carrier</BrandLabel>
         </Brand>
         <MenuContainer>
           <MenuItemLink to="/">

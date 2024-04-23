@@ -1,6 +1,6 @@
 import { ChangeEvent, useState } from "react";
 import { HeaderContent } from "../../components/HeaderContent";
-import { NumberList } from "../../components/NumberList";
+import { TableList } from "../../components/TableList";
 import { Container, InputSearch } from "./style";
 import numberList from '../../services/numberList.json';
 import Loading from "../../components/Loading";
@@ -34,7 +34,7 @@ export default function List(){
         </HeaderContent>
 
         {!filteredItems ? <Loading /> : (
-          <NumberList 
+          <TableList 
             dataHeader={dataHeader} 
             data={filteredItems} />
         )}
