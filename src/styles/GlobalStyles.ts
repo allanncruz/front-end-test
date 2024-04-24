@@ -23,6 +23,11 @@ export default createGlobalStyle`
 
   a{
     text-decoration: none;
+    color: ${props => props.theme.colors.white};  
+  }
+
+  p{
+    color: ${props => props.theme.colors.white};
   }
 
   body {

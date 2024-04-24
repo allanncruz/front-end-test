@@ -1,21 +1,33 @@
 import { HeaderContent } from "../../components/HeaderContent";
-import { Container } from "./style";
-import { useParams } from "react-router-dom";
+import { BodyContent, Container, FooterContent, TextPrice, TextSmall } from "./style";
+import { Link, useParams } from "react-router-dom";
 import dataItems from "../../data/mockData";
 import { INumbersProps } from "../../interfaces/types";
+import Loading from "../../components/Loading";
+import { covertePrice } from "../../utils/converterPrice";
 
 const Detail: React.FC = () =>{
   const { id } = useParams<{ id: any }>();
   const item: INumbersProps | undefined = dataItems.find((item) => item.id === parseInt(id));
 
-
-  if (!item) {
-    return <div>Item não encontrado</div>;
-  }
-
   return (
       <Container>
-        <HeaderContent title={item.value} />
+        {!item ? <Loading /> : (
+          <>
+            <HeaderContent title={item.value} />
+
+            <BodyContent>
+              <TextSmall>Preço mensal</TextSmall>
+              <TextPrice>{covertePrice(item.monthyPrice, item.currency)}</TextPrice>
+              <TextSmall>Preço de configuração</TextSmall>
+              <TextPrice>{covertePrice(item.setupPrice, item.currency)}</TextPrice>
+            </BodyContent>
+            
+            <FooterContent>
+              <Link to={'/'}>Voltar</Link>
+            </FooterContent>
+          </>
+        )}
       </Container>
   )
 };
