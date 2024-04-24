@@ -59,6 +59,7 @@ export const ListRows = styled.div`
 export const HeaderList = styled.div`
   padding: 15px 10px;
   display: flex;
+  align-items: center;
   background-color: ${props => props.theme.colors.secondary};
   color: ${props => props.theme.colors.white};
   border-top: solid 1px ${props => props.theme.colors.primaryLight};
@@ -67,7 +68,14 @@ export const HeaderList = styled.div`
 
 
   @media(max-width: 720px){
-    font-size: 14px;
+    font-size: 12px;
+    
+    > div {
+        &:nth-child(1){
+        font-size: 13px;
+        width: 200%;
+      }
+    }
   }
 
 `;

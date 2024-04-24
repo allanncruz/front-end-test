@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { IDataTable } from "../../interfaces/types";
 import { covertePrice } from "../../utils/converterPrice";
 import { 
@@ -17,17 +18,19 @@ export const TableList = ({data, dataHeader}: IDataTable) => {
       </HeaderList>
 
       {data?.map(item => (
-        <ListRows key={item.id}>
-          <ListColumns>
-            {item.value}
-          </ListColumns>
-          <ListColumns>
-            {covertePrice(item.monthyPrice, item.currency)}
-          </ListColumns>
-          <ListColumns>
-            {covertePrice(item.setupPrice, item.currency)}
-          </ListColumns>
-        </ListRows>
+        <Link to={`item/${item.id}`}>
+          <ListRows key={item.id}>
+            <ListColumns>
+              {item.value}
+            </ListColumns>
+            <ListColumns>
+              {covertePrice(item.monthyPrice, item.currency)}
+            </ListColumns>
+            <ListColumns>
+              {covertePrice(item.setupPrice, item.currency)}
+            </ListColumns>
+          </ListRows>
+        </Link>
       ))}
     </Container>
   )

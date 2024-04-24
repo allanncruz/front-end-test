@@ -2,8 +2,8 @@ import { ChangeEvent, useState } from "react";
 import { HeaderContent } from "../../components/HeaderContent";
 import { TableList } from "../../components/TableList";
 import { Container, InputSearch } from "./style";
-import numberList from '../../services/numberList.json';
 import Loading from "../../components/Loading";
+import dataItems from "../../data/mockData";
 
 export default function List(){
   const [filter, setFilter] = useState('');
@@ -12,7 +12,7 @@ export default function List(){
     setFilter(event.target.value);
   };
 
-  const filteredItems = numberList.filter(item => {
+  const filteredItems = dataItems.filter(item => {
     const searchTerm  = filter.toLowerCase();
     const itemValue   = item.value.toLowerCase();
   
