@@ -6,5 +6,6 @@ export const Container = styled.header`
     background-color: ${props => props.theme.colors.secondary};
     display: flex;
     align-items: center;
+    justify-content: flex-end;
     padding: 0 25px; 
 `;

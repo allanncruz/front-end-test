@@ -10,7 +10,9 @@ export const Toggle = ({
 }: IToggleProps) => (
     <>
       <ToggleLabel>{labelLeft}</ToggleLabel>
-      <ToggleSelector 
+      <ToggleSelector
+        height={15}
+        width={35}
         checked={checked}
         uncheckedIcon={false}
         checkedIcon ={false} 

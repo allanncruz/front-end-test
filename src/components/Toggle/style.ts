@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Switch, { ReactSwitchProps } from 'react-switch';
 
-export const ToggleLabel = styled.span`
+export const ToggleLabel = styled.small`
   color: ${props => props.theme.colors.white};
 `;
 
@@ -10,5 +10,5 @@ export const ToggleSelector = styled(Switch).attrs<ReactSwitchProps>(
     onColor: theme.colors.info,
     offColor: theme.colors.warning
   }))<ReactSwitchProps>`
-    margin: 0 7px
+    margin: 0 5px
   `;
