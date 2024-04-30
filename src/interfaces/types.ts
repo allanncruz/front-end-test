@@ -45,3 +45,10 @@ export interface IToggleProps {
   checked: boolean;
   onChange(): void;
 }
+
+export interface ButtonProps {
+  primary?: boolean;
+  outline?: boolean;
+  onClick?: () => void;
+  children: React.ReactNode;
+}

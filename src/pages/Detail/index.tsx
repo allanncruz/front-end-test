@@ -5,6 +5,7 @@ import dataItems from "../../data/mockData";
 import { INumbersProps } from "../../interfaces/types";
 import Loading from "../../components/Loading";
 import { covertePrice } from "../../utils/converterPrice";
+import { Button } from "../../components/Button";
 
 const Detail: React.FC = () =>{
   const { id } = useParams<{ id: any }>();
@@ -24,7 +25,10 @@ const Detail: React.FC = () =>{
             </BodyContent>
             
             <FooterContent>
-              <Link to={'/'}>Voltar</Link>
+              <Button primary >Reservar</Button>
+              <Link to={'/'}>
+                <Button outline >Voltar</Button>
+              </Link>
             </FooterContent>
           </>
         )}
