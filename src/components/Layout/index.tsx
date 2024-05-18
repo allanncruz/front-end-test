@@ -7,12 +7,14 @@ import Content from "../Content";
 
 export const Layout = ({ children }: {children: React.ReactNode}) =>{
   return (
+    <>
+      <Header />
       <Grid>
-        <Header />
         <Aside />
         <Content>
           {children}
         </Content>
       </Grid>
+    </>
   )
 };

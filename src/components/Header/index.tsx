@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { Container } from "./style";
+import { Brand, BrandLabel, Container } from "./style";
 import { Toggle } from "../Toggle";
 import { useTheme } from "../../hooks/theme";
+import { TbAntennaBars4 } from "react-icons/tb";
 
 export const Header: React.FC = () => {
 
@@ -18,6 +19,10 @@ export const Header: React.FC = () => {
 
   return (
       <Container>
+        <Brand>
+          <TbAntennaBars4 size={32} />
+          <BrandLabel htmlFor="">Telecom Carrier</BrandLabel>
+        </Brand>
         <Toggle 
           labelLeft="Light"
           labelRight="Dark"
