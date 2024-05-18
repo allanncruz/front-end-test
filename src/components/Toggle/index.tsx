@@ -8,7 +8,7 @@ export const Toggle = ({
   checked,
   onChange
 }: IToggleProps) => (
-    <>
+    <div>
       <ToggleLabel>{labelLeft}</ToggleLabel>
       <ToggleSelector
         height={15}
@@ -18,5 +18,5 @@ export const Toggle = ({
         checkedIcon ={false} 
         onChange={onChange} />
       <ToggleLabel>{labelRight}</ToggleLabel>
-    </>
+    </div>
 )

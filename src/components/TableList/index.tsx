@@ -21,6 +21,9 @@ export const TableList = ({data, dataHeader}: IDataTable) => {
         <Link to={`item/${item.id}`}>
           <ListRows key={item.id}>
             <ListColumns>
+              {item.id}
+            </ListColumns>
+            <ListColumns>
               {item.value}
             </ListColumns>
             <ListColumns>

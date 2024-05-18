@@ -6,10 +6,9 @@ export const Container = styled.div`
 
 export const ListRows = styled.div`
   padding: 15px;
-  margin: 10px 0;
-  border-radius: 5px;
+  margin: 1px 0;
   border: 4px;
-  background-color: ${props => props.theme.colors.secondary};
+  background-color: ${props => props.theme.colors.tertiary};
   color: ${props => props.theme.colors.white};  
   cursor: pointer;
   display: flex;
@@ -18,6 +17,7 @@ export const ListRows = styled.div`
   transition: all.3s;
   position: relative;
   overflow: hidden;
+  border-bottom: solid 1px ${props => props.theme.colors.primaryLight};
 
   &::before{
     content: "";
@@ -40,18 +40,7 @@ export const ListRows = styled.div`
 
   > div {
       &:nth-child(1){
-      font-size: 18px;
-      font-weight: 900;
-    }
-  }
-
-
-  @media(max-width: 720px){
-    > div {
-        &:nth-child(1){
-        font-size: 13px;
-        width: 200%;
-      }
+      width: 100px;
     }
   }
 `;
@@ -60,12 +49,19 @@ export const HeaderList = styled.div`
   padding: 15px 10px;
   display: flex;
   align-items: center;
-  background-color: ${props => props.theme.colors.secondary};
+  background-color: ${props => props.theme.colors.tertiary};
   color: ${props => props.theme.colors.white};
   border-top: solid 1px ${props => props.theme.colors.primaryLight};
   border-bottom: solid 1px ${props => props.theme.colors.primaryLight};
   font-weight: 900;
 
+  
+
+  > div {
+      &:nth-child(1){
+      width: 100px;
+    }
+  }
 
   @media(max-width: 720px){
     font-size: 12px;
