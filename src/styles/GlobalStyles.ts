@@ -34,7 +34,7 @@ export default createGlobalStyle`
     font-family: 'Roboto', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: ${props => props.theme.colors.primary};
+    background-color: ${props => props.theme.colors.gray};
   }
   
 `;

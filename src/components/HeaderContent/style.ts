@@ -21,7 +21,7 @@ export const Title = styled.h1`
     content: "";
     width: 40px;
     height: 7px;
-    background-color: ${props => props.theme.colors.warning};
+    background-color: ${props => props.theme.colors.info};
     display: block;
   }
 

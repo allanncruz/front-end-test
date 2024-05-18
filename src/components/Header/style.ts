@@ -1,12 +1,11 @@
 import styled from "styled-components";
 
 export const Container = styled.header`
-    border-bottom: solid 1px ${props => props.theme.colors.primaryLight};
-    background-color: ${props => props.theme.colors.secondary};
+    background-color: ${props => props.theme.colors.tertiary};
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 25px;
+    padding: 15px 20px;
 `;
 
 
@@ -20,6 +19,7 @@ export const Brand = styled.div`
     background-color: ${props => props.theme.colors.warning};
     border-radius: 4px;
     margin-right: 10px;
+    color: #fff;
   }
 
   @media(max-width: 720px){

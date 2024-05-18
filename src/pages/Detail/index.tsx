@@ -25,9 +25,8 @@ const Detail: React.FC = () =>{
             </BodyContent>
             
             <FooterContent>
-              <Button primary >Reservar</Button>
               <Link to={'/'}>
-                <Button outline >Voltar</Button>
+                <Button secondary >Voltar</Button>
               </Link>
             </FooterContent>
           </>
