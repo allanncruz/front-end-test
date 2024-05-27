@@ -8,5 +8,11 @@ export const Container = styled.div`
 export const PageNumbers = styled.button`
   padding: 7px 10px;
   border-radius: 4px;
+  background-color: ${props => props.theme.colors.primary};
+  color: #fff;
   margin: 0 3px;
+
+  &:disabled{
+    opacity: 0.5;
+  }
 `
