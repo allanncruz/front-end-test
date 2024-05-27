@@ -1,4 +1,5 @@
 import React from 'react';
+import { InputSearch } from './style';
 
 interface SearchProps {
   onSearch: (query: string) => void;
@@ -10,7 +11,7 @@ const Search: React.FC<SearchProps> = ({ onSearch }) => {
   };
 
   return (
-    <input type="text" placeholder="Search..." onChange={handleInputChange} />
+    <InputSearch type="text" placeholder="Filtrar números..." onChange={handleInputChange} />
   );
 };
 

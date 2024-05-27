@@ -12,7 +12,7 @@ export default function List(){
   const [items, setItems] = useState<INumbersProps[]>([]);
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const itemsPerPage = 5;
+  const itemsPerPage = 15;
 
   useEffect(() => {
     setItems(dataItems);

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Container, PageNumbers } from './style';
 
 interface PaginationProps {
   currentPage: number;
@@ -10,17 +11,17 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, onPage
   const pages = Array.from({ length: totalPages }, (_, i) => i + 1);
 
   return (
-    <div>
+    <Container>
       {pages.map(page => (
-        <button
+        <PageNumbers
           key={page}
           onClick={() => onPageChange(page)}
           disabled={page === currentPage}
         >
           {page}
-        </button>
+        </PageNumbers>
       ))}
-    </div>
+    </Container>
   );
 };
 
