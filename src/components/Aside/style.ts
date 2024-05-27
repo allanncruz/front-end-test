@@ -10,7 +10,7 @@ export const Container = styled.aside`
 
   @media(max-width: 720px){
     padding: 10px;
-    margin: 0;
+    margin: 20px 3px;
   }
 `;
 

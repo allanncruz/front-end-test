@@ -65,13 +65,6 @@ export const HeaderList = styled.div`
 
   @media(max-width: 720px){
     font-size: 12px;
-    
-    > div {
-        &:nth-child(1){
-        font-size: 13px;
-        width: 200%;
-      }
-    }
   }
 
 `;
