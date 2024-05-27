@@ -3,6 +3,7 @@ import { Brand, BrandLabel, Container } from "./style";
 import { Toggle } from "../Toggle";
 import { useTheme } from "../../hooks/theme";
 import { TbAntennaBars4 } from "react-icons/tb";
+import { Link } from "react-router-dom";
 
 export const Header: React.FC = () => {
 
@@ -19,10 +20,12 @@ export const Header: React.FC = () => {
 
   return (
       <Container>
-        <Brand>
-          <TbAntennaBars4 size={32} />
-          <BrandLabel htmlFor="">Telecom Carrier</BrandLabel>
-        </Brand>
+        <Link to={'/'}>
+          <Brand>
+            <TbAntennaBars4 size={32} />
+            <BrandLabel htmlFor="">Telecom Carrier</BrandLabel>
+          </Brand>
+        </Link>
         <Toggle 
           labelLeft="Light"
           labelRight="Dark"
