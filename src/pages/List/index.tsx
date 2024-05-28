@@ -52,7 +52,8 @@ export default function List(){
         {!paginatedItems ? <Loading /> : (
           <TableList 
             dataHeader={dataHeader} 
-            data={paginatedItems} />
+            data={paginatedItems}
+            buttonsActions={true} />
         )}
 
         <Pagination

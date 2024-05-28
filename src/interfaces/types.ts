@@ -8,7 +8,8 @@ export interface INumbersProps {
 
 export interface IDataTable {
   data: INumbersProps[],
-  dataHeader: Array<any>
+  dataHeader: Array<any>,
+  buttonsActions?: boolean
 }
 
 export interface IHeaderContent {

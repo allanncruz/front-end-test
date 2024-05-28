@@ -10,7 +10,7 @@ import { Button } from "../Button";
 import { PiShareDuotone } from "react-icons/pi";
 import { useItems } from "../../hooks/theme";
 
-export const TableList = ({data, dataHeader}: IDataTable) => {
+export const TableList = ({data, dataHeader, buttonsActions}: IDataTable) => {
 
   const { addItem } = useItems();
 
@@ -37,14 +37,16 @@ export const TableList = ({data, dataHeader}: IDataTable) => {
             <ListColumns>
               {covertePrice(item.setupPrice, item.currency)}
             </ListColumns>
-            <ListColumns>
+            {buttonsActions && (
+              <ListColumns>
                 <Button primary onClick={() => addItem(item)}>Reservar</Button>
                 <Link to={`item/${item.id}`}>
                   <Button secondary>
                     <PiShareDuotone />
                   </Button>
                 </Link>
-            </ListColumns>
+              </ListColumns>
+            )}
           </ListRows>
       ))}
     </Container>
