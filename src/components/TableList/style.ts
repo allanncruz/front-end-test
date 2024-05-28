@@ -6,8 +6,20 @@ export const Container = styled.div`
   a button {
     padding: 3px 10px;
     margin-left: 14px;
+    @media(max-width: 720px){
+      padding: 0;
+    }
   }
 `;
+
+export const LabelButton = styled.div`
+  &::after{
+    content: "Reservar";
+    @media(max-width: 720px){
+      content: "+";
+    }
+  }
+`
 
 export const ListRows = styled.div`
   padding: 15px;
@@ -47,6 +59,10 @@ export const ListRows = styled.div`
       width: 100px;
     }
   }
+
+  @media(max-width: 720px){
+    padding: 10px 0;
+  }
 `;
 
 export const HeaderList = styled.div`
@@ -69,6 +85,9 @@ export const HeaderList = styled.div`
 
   @media(max-width: 720px){
     font-size: 12px;
+    &:first-child{
+      display: none;
+    }
   }
 
 `;
@@ -76,6 +95,15 @@ export const HeaderList = styled.div`
 export const ListColumns = styled.div`
   width: 100%;
   text-align: center;
+
+  @media(max-width: 720px){
+    button{
+      padding: 3px 8px;
+    }
+    &:first-child{
+      display: none;
+    }
+  }
 `;
 
 

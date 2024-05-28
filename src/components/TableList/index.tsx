@@ -5,7 +5,8 @@ import {
   ListRows, 
   HeaderList, 
   ListColumns, 
-  Container } from "./style";
+  Container,
+  LabelButton } from "./style";
 import { Button } from "../Button";
 import { PiShareDuotone } from "react-icons/pi";
 import { useItems } from "../../hooks/theme";
@@ -39,7 +40,9 @@ export const TableList = ({data, dataHeader, buttonsActions}: IDataTable) => {
             </ListColumns>
             {buttonsActions && (
               <ListColumns>
-                <Button primary onClick={() => addItem(item)}>Reservar</Button>
+                <Button primary onClick={() => addItem(item)}>
+                  <LabelButton />
+                </Button>
                 <Link to={`item/${item.id}`}>
                   <Button secondary>
                     <PiShareDuotone />
