@@ -23,6 +23,7 @@ export const MenuItemLink = styled(Link)`
   transition: .3s;
   margin: 7px 0;
   display: flex;
+  position: relative;
 
   svg {
     margin-right: 7px;
@@ -41,4 +42,24 @@ export const MenuItemLink = styled(Link)`
       font-size: 20px;
     }
   }
-`;  
+`; 
+
+export const ReservedItems = styled.span`
+  position: absolute;
+  background: red;
+  font-size: 11px;
+  border-radius: 15px;
+  padding: 3px;
+  width: 15px;
+  height: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 2px;
+  right: 85px;
+  padding-right: 4px;
+
+    @media(max-width: 720px){
+      right: -3px;
+    }
+`

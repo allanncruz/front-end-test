@@ -7,9 +7,20 @@ import { RiInformationLine } from "react-icons/ri";
 import { 
   Container, 
   MenuContainer, 
-  MenuItemLink} from "./style";
+  MenuItemLink,
+  ReservedItems} from "./style";
+import { useItems } from "../../hooks/theme";
 
 export const Aside: React.FC = () =>{
+  const { selectedItems } = useItems();
+
+  const countReservedItems = () => {
+    if (selectedItems.length <= 0){
+      return null
+    }
+    return <ReservedItems>{selectedItems.length}</ReservedItems>
+  }
+
   return (
       <Container>
         <MenuContainer>
@@ -20,6 +31,7 @@ export const Aside: React.FC = () =>{
           <MenuItemLink to="/reservados">
             <IoMdCart />
             Reservados
+            {countReservedItems()}
           </MenuItemLink>
           <MenuItemLink to="/sobre">
             <RiInformationLine />
