@@ -7,11 +7,12 @@ import List from "./pages/List";
 import About from "./pages/About";
 import Detail from "./pages/Detail";
 
-import { useTheme } from './hooks/theme';
+import { useItems } from './hooks/theme';
+import Cart from "./pages/Cart";
 
 
 export default function App(){
-  const {theme} = useTheme();
+  const {theme} = useItems();
   return (
       <ThemeProvider theme={theme}>
         <BrowserRouter>
@@ -21,6 +22,7 @@ export default function App(){
               <Route path="/" element={<List />} />
               <Route path="/item/:id" element={<Detail />} />
               <Route path="/sobre" element={<About />} />
+              <Route path="/reservados" element={<Cart />} />
             </Routes>
           </Layout>
         </BrowserRouter>

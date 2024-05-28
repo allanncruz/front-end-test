@@ -16,9 +16,11 @@ export interface IHeaderContent {
   children?: React.ReactNode
 }
 
-export interface IThemeContext {
+export interface IContext {
   toggleTheme(): void;
   theme: ITheme;
+  selectedItems: INumbersProps[];
+  addItem: (item: INumbersProps) => void;
 }
 
 export interface ITheme {

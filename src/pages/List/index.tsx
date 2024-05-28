@@ -39,7 +39,8 @@ export default function List(){
     "ID",
     "Número",
     "Preço mensal",
-    "Preço de configuração"
+    "Preço de configuração",
+    ""
   ]
 
   return (

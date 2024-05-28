@@ -2,6 +2,11 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   padding: 80px 0 40px 0;
+
+  a button {
+    padding: 3px 10px;
+    margin-left: 14px;
+  }
 `;
 
 export const ListRows = styled.div`
@@ -30,7 +35,6 @@ export const ListRows = styled.div`
   }
 
   &:hover {
-    opacity: .8;
 
     &::before{
       width: 5px;

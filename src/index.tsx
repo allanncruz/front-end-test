@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
 import App from './App';
-import { ThemeProvider } from './hooks/theme';
+import { ContextProvider } from './hooks/theme';
 
 
 
@@ -11,9 +11,9 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <ThemeProvider>
+    <ContextProvider>
       <App />
-    </ThemeProvider>
+    </ContextProvider>
   </React.StrictMode>
 );
 

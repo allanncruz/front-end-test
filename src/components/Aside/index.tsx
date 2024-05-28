@@ -1,6 +1,8 @@
 import React from "react";
 import { IoListSharp } from "react-icons/io5";
+import { IoMdCart } from "react-icons/io";
 import { RiInformationLine } from "react-icons/ri";
+
 
 import { 
   Container, 
@@ -13,7 +15,11 @@ export const Aside: React.FC = () =>{
         <MenuContainer>
           <MenuItemLink to="/">
             <IoListSharp />
-            Lista de números
+            Disponíveis
+          </MenuItemLink>
+          <MenuItemLink to="/reservados">
+            <IoMdCart />
+            Reservados
           </MenuItemLink>
           <MenuItemLink to="/sobre">
             <RiInformationLine />

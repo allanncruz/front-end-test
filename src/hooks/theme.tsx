@@ -2,11 +2,18 @@ import React, { createContext, useState, useContext } from "react";
 
 import dark from "../styles/themes/dark";
 import light from "../styles/themes/light";
-import { ITheme, IThemeContext } from "../interfaces/types";
+import { INumbersProps, ITheme, IContext } from "../interfaces/types";
 
-const ThemeContext = createContext<IThemeContext>({} as IThemeContext);
 
-const ThemeProvider = ({ children }: {children: React.ReactNode}) => {
+const Context = createContext<IContext>({} as IContext);
+
+const ContextProvider = ({ children }: {children: React.ReactNode}) => {
+  const [selectedItems, setSelectedItems] = useState<INumbersProps[]>([]);
+
+  const addItem = (item: INumbersProps) => {
+    setSelectedItems((prevItems) => [...prevItems, item]);
+  };
+
   const [theme, setTheme] = useState<ITheme>(() => {
     const themeSaved = localStorage.getItem('@telecom-carrier:theme');
     
@@ -28,16 +35,16 @@ const ThemeProvider = ({ children }: {children: React.ReactNode}) => {
   };
 
   return(
-    <ThemeContext.Provider value={{ toggleTheme, theme }}>
+    <Context.Provider value={{ toggleTheme, theme, selectedItems, addItem }}>
       {children}
-    </ThemeContext.Provider>
+    </Context.Provider>
   )
 };
 
-function useTheme(): IThemeContext {
-  const context = useContext(ThemeContext);
+function useItems(): IContext {
+  const context = useContext(Context);
 
   return context;
 }
 
-export { ThemeProvider, useTheme };
+export { ContextProvider, useItems };
