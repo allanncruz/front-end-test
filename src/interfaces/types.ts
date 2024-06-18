@@ -9,7 +9,8 @@ export interface INumbersProps {
 export interface IDataTable {
   data: INumbersProps[],
   dataHeader: Array<any>,
-  buttonsActions?: boolean
+  buttonsActions?: boolean,
+  activeButton?: string
 }
 
 export interface IHeaderContent {
@@ -22,6 +23,7 @@ export interface IContext {
   theme: ITheme;
   selectedItems: INumbersProps[];
   addItem: (item: INumbersProps) => void;
+  activeButton: string
 }
 
 export interface ITheme {
@@ -54,4 +56,5 @@ export interface ButtonProps {
   secondary?: boolean;
   onClick?: () => void;
   children: React.ReactNode;
+  className?: string
 }
