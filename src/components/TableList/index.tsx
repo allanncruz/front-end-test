@@ -12,7 +12,7 @@ import { PiShareDuotone } from "react-icons/pi";
 import { useItems } from "../../hooks/theme";
 
 export const TableList = ({data, dataHeader, buttonsActions}: IDataTable) => {
-
+  
   const { addItem } = useItems();
 
   return(

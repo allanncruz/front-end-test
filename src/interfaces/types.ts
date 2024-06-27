@@ -23,7 +23,6 @@ export interface IContext {
   theme: ITheme;
   selectedItems: INumbersProps[];
   addItem: (item: INumbersProps) => void;
-  activeButton: string
 }
 
 export interface ITheme {

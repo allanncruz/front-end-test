@@ -55,6 +55,7 @@ export const ReservedItems = styled.span`
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #fff;
   top: 2px;
   right: 85px;
   padding-right: 4px;
