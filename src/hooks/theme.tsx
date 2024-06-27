@@ -14,6 +14,12 @@ const ContextProvider = ({ children }: {children: React.ReactNode}) => {
     setSelectedItems((prevItems) => [...prevItems, item]);
   };
 
+  const removeItem = (item: INumbersProps) => {
+    setSelectedItems((prevItems) =>
+      prevItems.filter((i) => i.id !== item.id)
+    );
+  };
+
   const [theme, setTheme] = useState<ITheme>(() => {
     const themeSaved = localStorage.getItem('@telecom-carrier:theme');
     
@@ -35,7 +41,7 @@ const ContextProvider = ({ children }: {children: React.ReactNode}) => {
   };
 
   return(
-    <Context.Provider value={{ toggleTheme, theme, selectedItems, addItem }}>
+    <Context.Provider value={{ toggleTheme, theme, selectedItems, addItem, removeItem }}>
       {children}
     </Context.Provider>
   )

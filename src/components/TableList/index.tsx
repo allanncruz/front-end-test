@@ -6,14 +6,15 @@ import {
   HeaderList, 
   ListColumns, 
   Container,
-  LabelButton } from "./style";
+  LabelAddButton,
+  LabelRemoveButton} from "./style";
 import { Button } from "../Button";
 import { PiShareDuotone } from "react-icons/pi";
 import { useItems } from "../../hooks/theme";
 
 export const TableList = ({data, dataHeader, buttonsActions}: IDataTable) => {
   
-  const { addItem } = useItems();
+  const { addItem, removeItem } = useItems();
 
   return(
     <Container>
@@ -41,7 +42,10 @@ export const TableList = ({data, dataHeader, buttonsActions}: IDataTable) => {
             {buttonsActions && (
               <ListColumns>
                 <Button primary onClick={() => addItem(item)}>
-                  <LabelButton />
+                  <LabelAddButton />
+                </Button>
+                <Button onClick={() => removeItem(item)}>
+                  <LabelRemoveButton />
                 </Button>
                 <Link to={`item/${item.id}`}>
                   <Button secondary>

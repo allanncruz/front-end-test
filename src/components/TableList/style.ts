@@ -12,11 +12,20 @@ export const Container = styled.div`
   }
 `;
 
-export const LabelButton = styled.div`
+export const LabelAddButton = styled.div`
   &::after{
     content: "Reservar";
     @media(max-width: 720px){
       content: "+";
+    }
+  }
+`
+
+export const LabelRemoveButton = styled.div`
+  &::after{
+    content: "Remover";
+    @media(max-width: 720px){
+      content: "-";
     }
   }
 `
