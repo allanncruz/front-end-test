@@ -27,6 +27,9 @@ export const TableList = ({data, dataHeader, buttonsActions}: IDataTable) => {
         return [...prevRemoveAddButton, item.id];
       }
     });
+    setRemoveDeletButton((prevRemoveDeletButton) => {
+      return prevRemoveDeletButton.filter(removeDeletButton => removeDeletButton !== item.id);
+    });
   };
 
   const handleRemoveItem = (item: INumbersProps) => {
@@ -37,6 +40,10 @@ export const TableList = ({data, dataHeader, buttonsActions}: IDataTable) => {
       } else {
         return [...prevRemoveDeletButton, item.id];
       }
+    });
+
+    setRemoveAddButton((prevRemoveAddButton) => {
+      return prevRemoveAddButton.filter(removeAddButton => removeAddButton !== item.id);
     });
   };
 
