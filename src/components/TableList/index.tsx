@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { IDataTable, INumbersProps } from "../../interfaces/types";
+import { IDataTable } from "../../interfaces/types";
 import { covertePrice } from "../../utils/converterPrice";
 import { 
   ListRows, 
@@ -8,39 +8,12 @@ import {
   Container,} from "./style";
 import { Button } from "../Button";
 import { PiShareDuotone } from "react-icons/pi";
-import { useItems } from "../../hooks/theme";
-import { useState } from "react";
+import { useItems } from "../../hooks/context";
 import ActionButtons from "./ActionButtons";
 
 export const TableList = ({data, dataHeader, buttonsActions}: IDataTable) => {
-  const { addItem, removeItem } = useItems();
-  const [removeAddButton, setRemoveAddButton] = useState<number[]>([]);
-  const [removeDeletButton, setRemoveDeletButton] = useState<number[]>([]);
-
-  const handleAddItem = (item: INumbersProps) => {
-    addItem(item);
-    setRemoveAddButton((prevRemoveAddButton) =>
-      prevRemoveAddButton.includes(item.id)
-        ? prevRemoveAddButton.filter((id) => id !== item.id)
-        : [...prevRemoveAddButton, item.id]
-    );
-    setRemoveDeletButton((prevRemoveDeletButton) =>
-      prevRemoveDeletButton.filter((id) => id !== item.id)
-    );
-  };
+  const { handleAddItem, handleRemoveItem, removeAddButton, removeDeletButton } = useItems();
   
-  const handleRemoveItem = (item: INumbersProps) => {
-    removeItem(item);
-    setRemoveDeletButton((prevRemoveDeletButton) =>
-      prevRemoveDeletButton.includes(item.id)
-        ? prevRemoveDeletButton.filter((id) => id !== item.id)
-        : [...prevRemoveDeletButton, item.id]
-    );
-    setRemoveAddButton((prevRemoveAddButton) =>
-      prevRemoveAddButton.filter((id) => id !== item.id)
-    );
-  };
-
   return(
     <Container>
       <HeaderList>

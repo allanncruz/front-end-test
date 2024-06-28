@@ -1,5 +1,5 @@
 import React from 'react';
-import { useItems } from '../../hooks/theme';
+import { useItems } from '../../hooks/context';
 import { TableList } from '../../components/TableList';
 import { HeaderContent } from '../../components/HeaderContent';
 

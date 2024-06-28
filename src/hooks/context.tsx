@@ -9,14 +9,33 @@ const Context = createContext<IContext>({} as IContext);
 
 const ContextProvider = ({ children }: {children: React.ReactNode}) => {
   const [selectedItems, setSelectedItems] = useState<INumbersProps[]>([]);
+  const [removeDeletButton, setRemoveDeletButton] = useState<number[]>([]);
+  const [removeAddButton, setRemoveAddButton] = useState<number[]>([]);
 
-  const addItem = (item: INumbersProps) => {
+
+  const handleAddItem = (item: INumbersProps) => {
     setSelectedItems((prevItems) => [...prevItems, item]);
+    setRemoveAddButton((prevRemoveAddButton) =>
+      prevRemoveAddButton.includes(item.id)
+        ? prevRemoveAddButton.filter((id) => id !== item.id)
+        : [...prevRemoveAddButton, item.id]
+    );
+    setRemoveDeletButton((prevRemoveDeletButton) =>
+      prevRemoveDeletButton.filter((id) => id !== item.id)
+    );
   };
 
-  const removeItem = (item: INumbersProps) => {
+  const handleRemoveItem = (item: INumbersProps) => {
     setSelectedItems((prevItems) =>
       prevItems.filter((i) => i.id !== item.id)
+    );
+    setRemoveDeletButton((prevRemoveDeletButton) =>
+      prevRemoveDeletButton.includes(item.id)
+        ? prevRemoveDeletButton.filter((id) => id !== item.id)
+        : [...prevRemoveDeletButton, item.id]
+    );
+    setRemoveAddButton((prevRemoveAddButton) =>
+      prevRemoveAddButton.filter((id) => id !== item.id)
     );
   };
 
@@ -41,7 +60,7 @@ const ContextProvider = ({ children }: {children: React.ReactNode}) => {
   };
 
   return(
-    <Context.Provider value={{ toggleTheme, theme, selectedItems, addItem, removeItem }}>
+    <Context.Provider value={{ toggleTheme, theme, selectedItems, removeAddButton, removeDeletButton, handleAddItem, handleRemoveItem }}>
       {children}
     </Context.Provider>
   )

@@ -9,7 +9,7 @@ import {
   MenuContainer, 
   MenuItemLink,
   ReservedItems} from "./style";
-import { useItems } from "../../hooks/theme";
+import { useItems } from "../../hooks/context";
 
 export const Aside: React.FC = () =>{
   const { selectedItems } = useItems();

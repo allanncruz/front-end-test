@@ -22,8 +22,10 @@ export interface IContext {
   toggleTheme(): void;
   theme: ITheme;
   selectedItems: INumbersProps[];
-  addItem: (item: INumbersProps) => void;
-  removeItem: (item: INumbersProps) => void;
+  handleAddItem: (item: INumbersProps) => void;
+  handleRemoveItem: (item: INumbersProps) => void;
+  removeAddButton: number[];
+  removeDeletButton: number[]
 }
 
 export interface ITheme {

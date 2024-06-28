@@ -7,7 +7,7 @@ import List from "./pages/List";
 import About from "./pages/About";
 import Detail from "./pages/Detail";
 
-import { useItems } from './hooks/theme';
+import { useItems } from './hooks/context';
 import Cart from "./pages/Cart";
 
 

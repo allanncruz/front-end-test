@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Brand, BrandLabel, Container } from "./style";
 import { Toggle } from "../Toggle";
-import { useItems } from "../../hooks/theme";
+import { useItems } from "../../hooks/context";
 import { TbAntennaBars4 } from "react-icons/tb";
 import { Link } from "react-router-dom";
 
