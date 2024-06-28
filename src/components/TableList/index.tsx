@@ -5,13 +5,12 @@ import {
   ListRows, 
   HeaderList, 
   ListColumns, 
-  Container,
-  LabelAddButton,
-  LabelRemoveButton} from "./style";
+  Container,} from "./style";
 import { Button } from "../Button";
 import { PiShareDuotone } from "react-icons/pi";
 import { useItems } from "../../hooks/theme";
 import { useState } from "react";
+import ActionButtons from "./ActionButtons";
 
 export const TableList = ({data, dataHeader, buttonsActions}: IDataTable) => {
   const { addItem, removeItem } = useItems();
@@ -20,31 +19,26 @@ export const TableList = ({data, dataHeader, buttonsActions}: IDataTable) => {
 
   const handleAddItem = (item: INumbersProps) => {
     addItem(item);
-    setRemoveAddButton((prevRemoveAddButton) => {
-      if (prevRemoveAddButton.includes(item.id)) {
-        return prevRemoveAddButton.filter(removeAddButton => removeAddButton !== item.id);
-      } else {
-        return [...prevRemoveAddButton, item.id];
-      }
-    });
-    setRemoveDeletButton((prevRemoveDeletButton) => {
-      return prevRemoveDeletButton.filter(removeDeletButton => removeDeletButton !== item.id);
-    });
+    setRemoveAddButton((prevRemoveAddButton) =>
+      prevRemoveAddButton.includes(item.id)
+        ? prevRemoveAddButton.filter((id) => id !== item.id)
+        : [...prevRemoveAddButton, item.id]
+    );
+    setRemoveDeletButton((prevRemoveDeletButton) =>
+      prevRemoveDeletButton.filter((id) => id !== item.id)
+    );
   };
-
+  
   const handleRemoveItem = (item: INumbersProps) => {
     removeItem(item);
-    setRemoveDeletButton((prevRemoveDeletButton) => {
-      if (prevRemoveDeletButton.includes(item.id)) {
-        return prevRemoveDeletButton.filter(removeDeletButton => removeDeletButton !== item.id);
-      } else {
-        return [...prevRemoveDeletButton, item.id];
-      }
-    });
-
-    setRemoveAddButton((prevRemoveAddButton) => {
-      return prevRemoveAddButton.filter(removeAddButton => removeAddButton !== item.id);
-    });
+    setRemoveDeletButton((prevRemoveDeletButton) =>
+      prevRemoveDeletButton.includes(item.id)
+        ? prevRemoveDeletButton.filter((id) => id !== item.id)
+        : [...prevRemoveDeletButton, item.id]
+    );
+    setRemoveAddButton((prevRemoveAddButton) =>
+      prevRemoveAddButton.filter((id) => id !== item.id)
+    );
   };
 
   return(
@@ -72,22 +66,16 @@ export const TableList = ({data, dataHeader, buttonsActions}: IDataTable) => {
             </ListColumns>
             {buttonsActions && (
               <ListColumns>
-                <Button 
-                  primary 
-                  className={`
-                    btn-${removeAddButton.includes(item.id) ? 'remove' : ''}
-                    btn-${removeDeletButton.includes(item.id) ? 'active' : ''}`}
-                  onClick={() => handleAddItem(item)}>
-                  <LabelAddButton />
-                </Button>
-                <Button 
-                  danger
-                  className={`
-                    btn-delet${removeAddButton.includes(item.id) ? 'active' : ''} 
-                    btn-delet-${removeDeletButton.includes(item.id) ? 'remove' : ''}`} 
-                  onClick={() => handleRemoveItem(item)}>
-                  <LabelRemoveButton />
-                </Button>
+                <ActionButtons
+                  key={item.id}
+                  item={item}
+                  removeAddButton={removeAddButton}
+                  removeDeletButton={removeDeletButton}
+                  handleAddItem={() => handleAddItem(item)}
+                  handleRemoveItem={() => handleRemoveItem(item)}
+                  LabelAddButton={() => <span>Adicionar</span>}
+                  LabelRemoveButton={() => <span>Remover</span>}
+                />
                 <Link to={`item/${item.id}`}>
                   <Button secondary>
                     <PiShareDuotone />
