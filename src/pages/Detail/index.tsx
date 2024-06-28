@@ -26,7 +26,7 @@ const Detail: React.FC = () =>{
             
             <FooterContent>
               <Link to={'/'}>
-                <Button secondary >Voltar</Button>
+                <Button primary >Voltar</Button>
               </Link>
             </FooterContent>
           </>

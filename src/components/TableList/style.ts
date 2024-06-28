@@ -2,7 +2,33 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   padding: 80px 0 40px 0;
+
+  a button {
+    padding: 3px 10px;
+    margin-left: 14px;
+    @media(max-width: 720px){
+      padding: 0;
+    }
+  }
 `;
+
+export const LabelAddButton = styled.div`
+  &::after{
+    content: "Reservar";
+    @media(max-width: 720px){
+      content: "+";
+    }
+  }
+`
+
+export const LabelRemoveButton = styled.div`
+  &::after{
+    content: "Remover";
+    @media(max-width: 720px){
+      content: "-";
+    }
+  }
+`
 
 export const ListRows = styled.div`
   padding: 15px;
@@ -30,7 +56,6 @@ export const ListRows = styled.div`
   }
 
   &:hover {
-    opacity: .8;
 
     &::before{
       width: 5px;
@@ -42,6 +67,10 @@ export const ListRows = styled.div`
       &:nth-child(1){
       width: 100px;
     }
+  }
+
+  @media(max-width: 720px){
+    padding: 10px 0;
   }
 `;
 
@@ -65,12 +94,8 @@ export const HeaderList = styled.div`
 
   @media(max-width: 720px){
     font-size: 12px;
-    
-    > div {
-        &:nth-child(1){
-        font-size: 13px;
-        width: 200%;
-      }
+    &:first-child{
+      display: none;
     }
   }
 
@@ -79,6 +104,15 @@ export const HeaderList = styled.div`
 export const ListColumns = styled.div`
   width: 100%;
   text-align: center;
+
+  @media(max-width: 720px){
+    button{
+      padding: 3px 8px;
+    }
+    &:first-child{
+      display: none;
+    }
+  }
 `;
 
 

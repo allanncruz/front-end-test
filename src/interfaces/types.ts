@@ -8,7 +8,9 @@ export interface INumbersProps {
 
 export interface IDataTable {
   data: INumbersProps[],
-  dataHeader: Array<any>
+  dataHeader: Array<any>,
+  buttonsActions?: boolean,
+  activeButton?: string
 }
 
 export interface IHeaderContent {
@@ -16,9 +18,14 @@ export interface IHeaderContent {
   children?: React.ReactNode
 }
 
-export interface IThemeContext {
+export interface IContext {
   toggleTheme(): void;
   theme: ITheme;
+  selectedItems: INumbersProps[];
+  handleAddItem: (item: INumbersProps) => void;
+  handleRemoveItem: (item: INumbersProps) => void;
+  removeAddButton: number[];
+  removeDeletButton: number[]
 }
 
 export interface ITheme {
@@ -36,6 +43,7 @@ export interface ITheme {
     success: string;
     info: string;
     warning: string;
+    danger: string
   },
 }
 
@@ -49,6 +57,8 @@ export interface IToggleProps {
 export interface ButtonProps {
   primary?: boolean;
   secondary?: boolean;
+  danger?: boolean;
   onClick?: () => void;
   children: React.ReactNode;
+  className?: string
 }

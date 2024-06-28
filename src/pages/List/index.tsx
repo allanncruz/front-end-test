@@ -1,44 +1,66 @@
-import { ChangeEvent, useState } from "react";
+import { useEffect, useState } from "react";
 import { HeaderContent } from "../../components/HeaderContent";
 import { TableList } from "../../components/TableList";
-import { Container, InputSearch } from "./style";
+import { Container } from "./style";
 import Loading from "../../components/Loading";
 import dataItems from "../../data/mockData";
+import { INumbersProps } from "../../interfaces/types";
+import Search from "../../components/Search";
+import Pagination from "../../components/Pagination";
 
 export default function List(){
-  const [filter, setFilter] = useState('');
+  const [items, setItems] = useState<INumbersProps[]>([]);
+  const [searchQuery, setSearchQuery] = useState<string>('');
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const itemsPerPage = 15;
 
-  const handleFiltroChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setFilter(event.target.value);
+  useEffect(() => {
+    setItems(dataItems);
+  }, []);
+
+  const filteredItems = items.filter(item =>
+    item.value.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  const totalPages = Math.ceil(filteredItems.length / itemsPerPage);
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const paginatedItems = filteredItems.slice(startIndex, startIndex + itemsPerPage);
+
+  const handleSearch = (query: string) => {
+    setSearchQuery(query);
+    setCurrentPage(1); // Reset to first page on search
   };
 
-  const filteredItems = dataItems.filter(item => {
-    const searchTerm  = filter.toLowerCase();
-    const itemValue   = item.value.toLowerCase();
-  
-    return (
-      itemValue.includes(searchTerm)
-    );
-  });
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+  };
 
   const dataHeader = [
     "ID",
     "Número",
     "Preço mensal",
-    "Preço de configuração"
+    "Preço de configuração",
+    ""
   ]
 
   return (
       <Container>
         <HeaderContent title="Números disponíveis">
-          <InputSearch type="text" placeholder="Filtrar números" value={filter} onChange={handleFiltroChange} />
+          <Search onSearch={handleSearch} />
         </HeaderContent>
 
-        {!filteredItems ? <Loading /> : (
+        {!paginatedItems ? <Loading /> : (
           <TableList 
             dataHeader={dataHeader} 
-            data={filteredItems} />
+            data={paginatedItems}
+            buttonsActions={true} />
         )}
+
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={handlePageChange}
+        />
       </Container>
   )
 };

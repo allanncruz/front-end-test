@@ -5,10 +5,15 @@ import {
   ListRows, 
   HeaderList, 
   ListColumns, 
-  Container } from "./style";
+  Container,} from "./style";
+import { Button } from "../Button";
+import { PiShareDuotone } from "react-icons/pi";
+import { useItems } from "../../hooks/context";
+import ActionButtons from "./ActionButtons";
 
-export const TableList = ({data, dataHeader}: IDataTable) => {
-
+export const TableList = ({data, dataHeader, buttonsActions}: IDataTable) => {
+  const { handleAddItem, handleRemoveItem, removeAddButton, removeDeletButton } = useItems();
+  
   return(
     <Container>
       <HeaderList>
@@ -18,7 +23,7 @@ export const TableList = ({data, dataHeader}: IDataTable) => {
       </HeaderList>
 
       {data?.map(item => (
-        <Link to={`item/${item.id}`}>
+        
           <ListRows key={item.id}>
             <ListColumns>
               {item.id}
@@ -32,8 +37,26 @@ export const TableList = ({data, dataHeader}: IDataTable) => {
             <ListColumns>
               {covertePrice(item.setupPrice, item.currency)}
             </ListColumns>
+            {buttonsActions && (
+              <ListColumns>
+                <ActionButtons
+                  key={item.id}
+                  item={item}
+                  removeAddButton={removeAddButton}
+                  removeDeletButton={removeDeletButton}
+                  handleAddItem={() => handleAddItem(item)}
+                  handleRemoveItem={() => handleRemoveItem(item)}
+                  LabelAddButton={() => <span>Adicionar</span>}
+                  LabelRemoveButton={() => <span>Remover</span>}
+                />
+                <Link to={`item/${item.id}`}>
+                  <Button secondary>
+                    <PiShareDuotone />
+                  </Button>
+                </Link>
+              </ListColumns>
+            )}
           </ListRows>
-        </Link>
       ))}
     </Container>
   )
