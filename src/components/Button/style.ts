@@ -20,6 +20,25 @@ export const StyledButton = styled.button<ButtonProps>`
   border-radius: 3px;
   cursor: pointer;
     &:hover {
-    opacity: .8;
-  } 
+      opacity: .8;
+    }
+
+    &.btn{
+      &-remove{
+        display: none;
+      }
+      &-active{
+        display: inline;
+      }
+    }
+
+    &.btn-delet{
+      display: none;
+      &.active{
+        display: block;
+      }
+      &-remove{
+        display: none;
+      }
+    }
 `;

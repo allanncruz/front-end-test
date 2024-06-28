@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { IDataTable } from "../../interfaces/types";
+import { IDataTable, INumbersProps } from "../../interfaces/types";
 import { covertePrice } from "../../utils/converterPrice";
 import { 
   ListRows, 
@@ -11,10 +11,34 @@ import {
 import { Button } from "../Button";
 import { PiShareDuotone } from "react-icons/pi";
 import { useItems } from "../../hooks/theme";
+import { useState } from "react";
 
 export const TableList = ({data, dataHeader, buttonsActions}: IDataTable) => {
-  
   const { addItem, removeItem } = useItems();
+  const [removeAddButton, setRemoveAddButton] = useState<number[]>([]);
+  const [removeDeletButton, setRemoveDeletButton] = useState<number[]>([]);
+
+  const handleAddItem = (item: INumbersProps) => {
+    addItem(item);
+    setRemoveAddButton((prevRemoveAddButton) => {
+      if (prevRemoveAddButton.includes(item.id)) {
+        return prevRemoveAddButton.filter(removeAddButton => removeAddButton !== item.id);
+      } else {
+        return [...prevRemoveAddButton, item.id];
+      }
+    });
+  };
+
+  const handleRemoveItem = (item: INumbersProps) => {
+    removeItem(item);
+    setRemoveDeletButton((prevRemoveDeletButton) => {
+      if (prevRemoveDeletButton.includes(item.id)) {
+        return prevRemoveDeletButton.filter(removeDeletButton => removeDeletButton !== item.id);
+      } else {
+        return [...prevRemoveDeletButton, item.id];
+      }
+    });
+  };
 
   return(
     <Container>
@@ -41,10 +65,20 @@ export const TableList = ({data, dataHeader, buttonsActions}: IDataTable) => {
             </ListColumns>
             {buttonsActions && (
               <ListColumns>
-                <Button primary onClick={() => addItem(item)}>
+                <Button 
+                  primary 
+                  className={`
+                    btn-${removeAddButton.includes(item.id) ? 'remove' : ''}
+                    btn-${removeDeletButton.includes(item.id) ? 'active' : ''}`}
+                  onClick={() => handleAddItem(item)}>
                   <LabelAddButton />
                 </Button>
-                <Button danger onClick={() => removeItem(item)}>
+                <Button 
+                  danger
+                  className={`
+                    btn-delet${removeAddButton.includes(item.id) ? 'active' : ''} 
+                    btn-delet-${removeDeletButton.includes(item.id) ? 'remove' : ''}`} 
+                  onClick={() => handleRemoveItem(item)}>
                   <LabelRemoveButton />
                 </Button>
                 <Link to={`item/${item.id}`}>
