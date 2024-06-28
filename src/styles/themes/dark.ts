@@ -12,7 +12,8 @@ const dark = {
 
     success: '#4e41f0',
     info: '#00b7af',
-    warning: '#009ad8'
+    warning: '#009ad8',
+    danger: '#dc3545'
   }
 }
 

@@ -41,6 +41,7 @@ export interface ITheme {
     success: string;
     info: string;
     warning: string;
+    danger: string
   },
 }
 
@@ -54,6 +55,7 @@ export interface IToggleProps {
 export interface ButtonProps {
   primary?: boolean;
   secondary?: boolean;
+  danger?: boolean;
   onClick?: () => void;
   children: React.ReactNode;
   className?: string

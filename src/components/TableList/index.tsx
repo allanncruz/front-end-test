@@ -44,7 +44,7 @@ export const TableList = ({data, dataHeader, buttonsActions}: IDataTable) => {
                 <Button primary onClick={() => addItem(item)}>
                   <LabelAddButton />
                 </Button>
-                <Button onClick={() => removeItem(item)}>
+                <Button danger onClick={() => removeItem(item)}>
                   <LabelRemoveButton />
                 </Button>
                 <Link to={`item/${item.id}`}>
